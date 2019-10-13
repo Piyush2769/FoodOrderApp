@@ -32,7 +32,6 @@ class HomePresenter {
             public void onResponse(@NonNull Call<Meals> call,@NonNull Response<Meals> response) {
                 view.hideLoading();
 
-                // TODO 21 Non-empty results check & Non-empty results check
                 if (response.isSuccessful() && response.body() != null) {
                     /*
                      * TODO 22 Receive the result
