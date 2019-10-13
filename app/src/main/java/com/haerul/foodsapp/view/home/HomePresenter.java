@@ -6,6 +6,8 @@
  -----------------------------------------------------------------------------*/
 package com.haerul.foodsapp.view.home;
 
+import android.support.annotation.NonNull;
+
 import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.model.Categories;
 import com.haerul.foodsapp.model.Meals;
@@ -18,19 +20,17 @@ class HomePresenter {
 
     private HomeView view;
 
-    // TODO 15 Create the constructor (View)
+    public HomePresenter(HomeView view) {
+        this.view = view;
+    }
 
     void getMeals() {
-        // TODO 16 do loading before making a request to the server
-
-        // TODO 17 with the line you have made a request
+        view.showLoading();
         Call<Meals> mealsCall = Utils.getApi().getMeal();
-
-        // TODO 19 waiting for Callback
         mealsCall.enqueue(new Callback<Meals>() {
             @Override
-            public void onResponse(Call<Meals> call, Response<Meals> response) {
-                // TODO 20 Close loading when you have received a response from the server
+            public void onResponse(@NonNull Call<Meals> call,@NonNull Response<Meals> response) {
+                view.hideLoading();
 
                 // TODO 21 Non-empty results check & Non-empty results check
                 if (response.isSuccessful() && response.body() != null) {
