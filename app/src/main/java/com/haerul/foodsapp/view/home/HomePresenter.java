@@ -7,6 +7,7 @@
 package com.haerul.foodsapp.view.home;
 
 import android.support.annotation.NonNull;
+import android.widget.TextView;
 
 import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.model.Categories;
@@ -19,6 +20,8 @@ import retrofit2.Response;
 class HomePresenter {
 
     private HomeView view;
+    private TextView f;
+
 
     public HomePresenter(HomeView view) {
         this.view = view;
