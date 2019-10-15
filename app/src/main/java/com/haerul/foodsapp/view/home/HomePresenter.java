@@ -13,6 +13,8 @@ import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.model.Categories;
 import com.haerul.foodsapp.model.Meals;
 
+import org.w3c.dom.Text;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +23,7 @@ class HomePresenter {
 
     private HomeView view;
     private TextView f;
-
+    private Text dd;
 
     public HomePresenter(HomeView view) {
         this.view = view;
