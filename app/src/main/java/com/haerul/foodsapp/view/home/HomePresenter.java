@@ -27,6 +27,7 @@ class HomePresenter {
     private Text ss;
     private Text sss;
     private Text sxs;
+    private Text ssy;
 
     public HomePresenter(HomeView view) {
         this.view = view;
